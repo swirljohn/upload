@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sub(){
+        var pro = window.location.protocol;
+        var host = window.location.hostname;
+        document.up.action = pro + "//" + host + ":9000/upload";
+        document.up.submit();
+    }
+</script>
+<form name="up" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileName" />
+    <input type="button" th:value="submit" onclick="sub()"/>
+</form>
+</body>
+</html>
